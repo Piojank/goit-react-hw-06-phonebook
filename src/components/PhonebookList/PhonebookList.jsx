@@ -28,7 +28,7 @@ export const ContactList = () => {
   const PhonebookListItem = findContacts();
 
   return (
-    <div className={style.PhonebookList__container}>
+
       <ul className={style.PhonebookList__list}>
         {PhonebookListItem.map(({ id, name, number }) => {
           return (
@@ -47,6 +47,6 @@ export const ContactList = () => {
           );
         })}
       </ul>
-    </div>
+
   );
 };

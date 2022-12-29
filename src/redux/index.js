@@ -1,5 +1,3 @@
-// реекспорт
-
 export * as sliceContacts from './sliceContacts';
 export * as sliceFilter from './sliceFilter';
 
