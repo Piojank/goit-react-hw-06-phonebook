@@ -29,8 +29,8 @@ export const PhonebookForm = () => {
     <>
       <form value={initialValues} className={style.FormInput} onSubmit={userSubmit}>
         
-          <label>Name</label>
-            Name
+          <label htmlFor="">Name
+
             <input
               type="text"
               name="name"
@@ -39,9 +39,9 @@ export const PhonebookForm = () => {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
-          
-          <label>Number</label>
-            Number
+          </label>
+          <label htmlFor="">Number
+      
             <input
               type="tel"
               name="number"
@@ -50,7 +50,7 @@ export const PhonebookForm = () => {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
             />
-          
+          </label>
           <button type="submit" className={style.FormButton}>
             Add Contact
         </button>
