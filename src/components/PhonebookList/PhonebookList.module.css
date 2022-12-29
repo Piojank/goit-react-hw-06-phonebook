@@ -1,0 +1,40 @@
+.PhonebookList__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 18px;
+    color: rgb(1, 1, 1);  
+}
+
+.PhonebookList__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.PhonebookList__item {
+    padding: 12px 20px;
+}
+
+.PhonebookList__text {
+    margin: 5px;
+}
+
+.PhonebookList__button {
+    float: right;
+    padding: 7px;
+    cursor: pointer;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 10px;
+}
+
+.PhonebookList__button:hover {
+    background-color: #56ca5c;
+}
