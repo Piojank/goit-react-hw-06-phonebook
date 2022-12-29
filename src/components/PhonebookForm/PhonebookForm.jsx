@@ -14,7 +14,7 @@ export const PhonebookForm = () => {
 
   const contacts = useSelector(getContacts);
 
-  const submitForm = (values, { resetForm }) => {
+  const userSubmit = (values, { resetForm }) => {
 
     if (contacts.find(contact => contact.name === values.name)) {
       return alert(`${values.name} is already is contacts`);
@@ -27,7 +27,7 @@ export const PhonebookForm = () => {
   };
   return (
     <>
-      <form initialValues={initialValues} className={style.FormInput} onSubmit={submitForm}>
+      <form value={initialValues} className={style.FormInput} onSubmit={userSubmit}>
         
           <label>Name</label>
             Name
