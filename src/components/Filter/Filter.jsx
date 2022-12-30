@@ -1,34 +1,24 @@
+import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { setFilter } from 'redux/contacts/slice';
+import { getFilter } from 'redux/contacts/selectors';
 import style from './Filter.module.css';
-import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { filterContacts } from 'redux/sliceFilter';
 
-export const Filter = () => {
+export default function Filter() {
   const dispatch = useDispatch();
-
-  const onFilter = e => {
-    dispatch(filterContacts(e.currentTarget.value));
-  };
+  const filter = useSelector(getFilter);
 
   return (
-    <div className={style.FilterContainer}>
-        <label>
-        Find contacts by name
-        <input
-            type="text"
-            name="filter"
-            className={style.FilterInput}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Find contacts by name"
-            onChange={onFilter}
-            placeholder="Filter Contacts"
-        />
-        </label>
-    </div>
+    <label className={style.label}>
+      Find contacts by name
+      <input
+        className={style.input}
+        type="text"
+        name="filter"
+        value={filter}
+        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+        onChange={evt => dispatch(setFilter(evt.target.value))}
+        required
+      />
+    </label>
   );
-};
-
-Event.propTypes = {
-  filter: PropTypes.string,
-  onChange: PropTypes.func,
-};
+}
