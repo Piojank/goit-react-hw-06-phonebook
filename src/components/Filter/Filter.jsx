@@ -8,10 +8,10 @@ export default function Filter() {
   const filter = useSelector(getFilter);
 
   return (
-    <label className={style.label}>
+    <div className={style.FilterContainer}>
       Find contacts by name
       <input
-        className={style.input}
+        className={style.FilterInput}
         type="text"
         name="filter"
         value={filter}
@@ -19,6 +19,6 @@ export default function Filter() {
         onChange={evt => dispatch(setFilter(evt.target.value))}
         required
       />
-    </label>
+    </div>
   );
 }
